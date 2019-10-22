@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>HW6</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script language="javascript">
+
+		function Art(name, price, sm_img, lrg_img) {
+			this.name = name;
+			this.price = price;
+			this.sm_img = sm_img;
+			this.lrg_img = lrg_img;
+		}
+		var gallery = new Array();
+
+		var art1 = new Art("Image 1", "$1.99", "~/Desktop/Comp20/hw6/sm_img1.jpeg", "~/Desktop/Comp20/hw6/lrg_img1.jpeg");
+		gallery.push(art1);
+		var art2 = new Art("Image 2", "$2.99", "~/Desktop/Comp20/hw6/sm_img2.jpeg", "~/Desktop/Comp20/hw6/lrg_img2.jpeg");
+		gallery.push(art2);
+		var art3 = new Art("Image 3", "$3.99", "~/Desktop/Comp20/hw6/sm_img3.jpeg", "~/Desktop/Comp20/hw6/lrg_img3.jpeg");
+		gallery.push(art3);
+		var art4 = new Art("Image 4", "$4.99", "~/Desktop/Comp20/hw6/sm_img4.jpeg", "~/Desktop/Comp20/hw6/lrg_img4.jpeg");
+		gallery.push(art4);
+		var art5 = new Art("Image 5", "$5.99", "~/Desktop/Comp20/hw6/sm_img5.jpeg", "~/Desktop/Comp20/hw6/lrg_img5.jpeg");
+		gallery.push(art5);
+
+		
+		
+		
+		$(document).ready ( function() {
+			alert("page loaded");
+			$("#first").html("Some text in the div");
+			$("#first").css({"font-size": "24px",
+				"border":"5px",
+				"border-style":"solid",
+				"border-color": "#0C3" });
+
+		})
+
+		function() {
+			var url = imag[i];
+			$(#img).attr("scr",url)
+
+		$(document).ready(function(){
+			$("#first").attr(function(gallery){
+				for (var i = 0; i < 5; i++) {
+					$("#img"+i).append(" <div class="img" style="background-image:url(~/Desktop/Comp20/hw6/sm_img1.jpeg)"></div>");
+				}
+				
+		});
+		
+
+			</script>
+		</head>
+
+		<body>
+			
+			<div id="first"></div>
+
+		</body>
+		</html>
