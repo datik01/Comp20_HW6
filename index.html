@@ -3,6 +3,45 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>HW6</title>
+	<style>
+
+    .row{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 4px;
+    }
+
+    .column{
+        flex: 16.5%;
+        max-width: 16.5%;
+        padding: 0 5px;
+    }
+
+    .column img{
+        margin-top: 8px;
+        vertical-align: middle;
+        width: 70%;
+        height: 70%;
+    }
+
+    .large{
+    	box-sizing: border-box;
+    	padding-top: 20px;
+    	margin-top: 20px;
+        flex: 80%;
+        max-width: 80%;
+        padding: 5 5px;
+    }
+
+    .large img{
+
+        display: block;
+  		margin-left: auto;
+  		margin-right: auto;
+        width: 500px;
+        height: 350px;
+    }
+</style>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script language="javascript">
 
@@ -14,49 +53,178 @@
 		}
 		var gallery = new Array();
 
-		var art1 = new Art("Image 1", "$1.99", "~/Desktop/Comp20/hw6/sm_img1.jpeg", "~/Desktop/Comp20/hw6/lrg_img1.jpeg");
+		var art1 = new Art("Image 1", "$1.99", "img1.jpg", "img1.jpg");
 		gallery.push(art1);
-		var art2 = new Art("Image 2", "$2.99", "~/Desktop/Comp20/hw6/sm_img2.jpeg", "~/Desktop/Comp20/hw6/lrg_img2.jpeg");
+		var art2 = new Art("Image 2", "$2.99", "img2.jpg", "img2.jpg");
 		gallery.push(art2);
-		var art3 = new Art("Image 3", "$3.99", "~/Desktop/Comp20/hw6/sm_img3.jpeg", "~/Desktop/Comp20/hw6/lrg_img3.jpeg");
+		var art3 = new Art("Image 3", "$3.99", "img3.jpg", "img3.jpg");
 		gallery.push(art3);
-		var art4 = new Art("Image 4", "$4.99", "~/Desktop/Comp20/hw6/sm_img4.jpeg", "~/Desktop/Comp20/hw6/lrg_img4.jpeg");
+		var art4 = new Art("Image 4", "$4.99", "img4.jpg", "img4.jpg");
 		gallery.push(art4);
-		var art5 = new Art("Image 5", "$5.99", "~/Desktop/Comp20/hw6/sm_img5.jpeg", "~/Desktop/Comp20/hw6/lrg_img5.jpeg");
+		var art5 = new Art("Image 5", "$5.99", "img5.jpg", "img5.jpg");
 		gallery.push(art5);
+        
 
-		
-		
-		
-		$(document).ready ( function() {
-			alert("page loaded");
-			$("#first").html("Some text in the div");
-			$("#first").css({"font-size": "24px",
-				"border":"5px",
-				"border-style":"solid",
-				"border-color": "#0C3" });
+        function set_gallery()
+        {
+        	for (var i = 1; i < 6; i++) {
+        		$("#img"+i).attr("src", gallery[i-1].sm_img);
+        		$("#img"+i).attr("rel", gallery[i-1].sm_img);
+        	}
+        	$(".large").hide();
+        }
 
+        function hide1()
+        {
+        	$(".info1").hide();
+        }
+
+        function hide2()
+        {
+        	$(".info2").hide();
+        }
+
+        function hide3()
+        {
+        	$(".info3").hide();
+        }
+
+        function hide4()
+        {
+        	$(".info4").hide();
+        }
+
+        function hide5()
+        {
+        	$(".info5").hide();
+        }
+
+        function zoom1()
+        {
+        	$("#div1").hover(function(){
+  			$("#img6").attr("src", gallery[0].lrg_img);
+  			$(".large").fadeIn();
+  			}, function(){
+  			$("#img6").removeAttr("src");
+  			$(".large").hide();
+			});
+
+			$("#div1").click(function(){
+  				$(".info1").text("Title: "+gallery[0].name+" Price: "+gallery[0].price);
+  				$(".info1").show();
+  				setTimeout(hide1, 5000)
+			});
+        }
+
+        function zoom2()
+        {
+        	$("#div2").hover(function(){
+  			$("#img6").attr("src", gallery[1].lrg_img);
+  			$(".large").fadeIn();
+  			}, function(){
+  			$("#img6").removeAttr("src");
+  			$(".large").hide();
+			});
+
+			$("#div2").click(function(){
+  				$(".info2").text("Title: "+gallery[1].name+" Price: "+gallery[1].price);
+  				$(".info2").show();
+  				setTimeout(hide2, 5000)
+			});
+        }
+
+        function zoom3()
+        {
+        	$("#div3").hover(function(){
+  			$("#img6").attr("src", gallery[2].lrg_img);
+  			$(".large").fadeIn();
+  			}, function(){
+  			$("#img6").removeAttr("src");
+  			$(".large").hide();
+			});
+
+			$("#div3").click(function(){
+  				$(".info3").text("Title: "+gallery[2].name+" Price: "+gallery[2].price);
+  				$(".info3").show();
+  				setTimeout(hide3, 5000)
+			});
+        }
+
+        function zoom4()
+        {
+        	$("#div4").hover(function(){
+  			$("#img6").attr("src", gallery[3].lrg_img);
+  			$(".large").fadeIn();
+  			}, function(){
+  			$("#img6").removeAttr("src");
+  			$(".large").hide();
+			});
+
+			$("#div4").click(function(){
+  				$(".info4").text("Title: "+gallery[3].name+" Price: "+gallery[3].price);
+  				$(".info4").show();
+  				setTimeout(hide4, 5000)
+			});
+        }
+
+        function zoom5()
+        {
+        	$("#div5").hover(function(){
+  			$("#img6").attr("src", gallery[4].lrg_img);
+  			$(".large").fadeIn();
+  			}, function(){
+  			$("#img6").removeAttr("src");
+  			$(".large").hide();
+			});
+
+			$("#div5").click(function(){
+  				$(".info5").text("Title: "+gallery[4].name+" Price: "+gallery[4].price);
+  				$(".info5").show();
+  				setTimeout(hide5, 5000)
+			});
+        }
+        
+        $(document).ready ( function() {
+			set_gallery()
+			zoom1()
+			zoom2()
+			zoom3()
+			zoom4()
+			zoom5()
 		})
+        
 
-		function() {
-			var url = imag[i];
-			$(#img).attr("scr",url)
+		</script>
+	</head>
 
-		$(document).ready(function(){
-			$("#first").attr(function(gallery){
-				for (var i = 0; i < 5; i++) {
-					$("#img"+i).append(" <div class="img" style="background-image:url(~/Desktop/Comp20/hw6/sm_img1.jpeg)"></div>");
-				}
-				
-		});
-		
+	<body>
 
-			</script>
-		</head>
+		<div class="row">
+            <div id="div1" class="column">
+            	<h2 class="info1"></h2>
+                <img class="zoom" id="img1">
+            </div>
+            <div id="div2" class="column">
+            	<h2 class="info2"></h2>
+                <img class="zoom" id="img2">
+            </div>
+            <div id="div3" class="column">
+            	<h2 class="info3"></h2>
+                <img class="zoom" id="img3">
+            </div>
+            <div id="div4" class="column">
+            	<h2 class="info4"></h2>
+                <img class="zoom" id="img4">
+            </div>
+            <div id="div5" class="column">
+            	<h2 class="info5"></h2>
+                <img class="zoom" id="img5">
+            </div>
+            
+        </div>
+        <div class="large">
+        	<img id="img6">
+        </div>
 
-		<body>
-			
-			<div id="first"></div>
-
-		</body>
-		</html>
+	</body>
+	</html>
